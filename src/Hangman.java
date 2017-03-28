@@ -26,21 +26,53 @@ public class Hangman {
         }
         //calculate word length
         int length = secretWord.length();
-        
+
         //replace Player 1's word with dashes
         //create setup for Player 2
         for (int i = 0; i < length; i++) {
-            String temp = secretWord.substring(i, i+1);
-        secretWord = secretWord.replace(temp,"-");    
+            String temp = secretWord.substring(i, i + 1);
+            secretWord = secretWord.replace(temp, "-");
         }
-        
+
         System.out.println(secretWord);
-        
-        //
-        
-        
-        
-        
-        
+
+        //create a counter for the number of lives
+        int counter = 6;
+
+
+        //Initiate Player 2 to start guessing
+        //create loop
+        while (true) {
+            System.out.println("Player 2: You have " + counter + " lives left. Guess a letter:");
+            String guess = input.nextLine();
+            char guessCharacter = guess.charAt(0);
+            //take input to match with Player 1's word
+                      
+            for (int i = 0; i < length; i++) {
+            if(guessCharacter == secretWord.charAt(i) ){    
+                System.out.println("Congrats you got one!");
+            }
+            }
+            
+            
+            
+            
+            if(guess.equalsIgnoreCase(secretWord)){
+              System.out.println("Your guess was correct");  
+            }else{
+                //counter decrease
+                counter = counter - 1;
+                System.out.println("Your guess was incorrect. Try again!");
+            }
+            
+            
+            
+            
+
+        }
+
+
+
+
     }
 }
