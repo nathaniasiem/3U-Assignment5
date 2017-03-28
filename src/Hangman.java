@@ -26,7 +26,19 @@ public class Hangman {
         }
         //calculate word length
         int length = secretWord.length();
+        
         //replace Player 1's word with dashes
+        //create setup for Player 2
+        for (int i = 0; i < length; i++) {
+            String temp = secretWord.substring(i, i+1);
+        secretWord = secretWord.replace(temp,"-");    
+        }
+        
+        System.out.println(secretWord);
+        
+        //
+        
+        
         
         
         
