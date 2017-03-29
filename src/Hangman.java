@@ -21,6 +21,7 @@ public class Hangman {
         //ask player 1 to type in word for player 2 to guess
         System.out.println("Player 1: Enter a word for Player 2 to guess:");
         String secretWord = input.nextLine();
+        String realWord = secretWord;
         for (int space = 0; space < 25; space++) {
             System.out.println("\n");
         }
@@ -38,6 +39,9 @@ public class Hangman {
 
         //create a counter for the number of lives
         int counter = 6;
+        
+        //create StringBuilder
+        StringBuilder temp = new StringBuilder(secretWord);
 
 
         //Initiate Player 2 to start guessing
@@ -47,32 +51,18 @@ public class Hangman {
             String guess = input.nextLine();
             char guessCharacter = guess.charAt(0);
             //take input to match with Player 1's word
-                      
+
             for (int i = 0; i < length; i++) {
-            if(guessCharacter == secretWord.charAt(i) ){    
-                System.out.println("Congrats you got one!");
+                if (guessCharacter == realWord.charAt(i)) {
+                    System.out.println("Congrats you got one!");
+                    
+                    
+                     temp.setCharAt(i, guessCharacter);
+                }
+                
+                
             }
-            }
-            
-            
-            
-            
-            if(guess.equalsIgnoreCase(secretWord)){
-              System.out.println("Your guess was correct");  
-            }else{
-                //counter decrease
-                counter = counter - 1;
-                System.out.println("Your guess was incorrect. Try again!");
-            }
-            
-            
-            
-            
-
+            System.out.println(temp);
         }
-
-
-
-
     }
 }
