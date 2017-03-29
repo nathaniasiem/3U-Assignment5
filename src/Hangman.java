@@ -18,10 +18,13 @@ public class Hangman {
         // create a scanner to scan input
         Scanner input = new Scanner(System.in);
 
+        int counter = 1;
+
         //ask player 1 to type in word for player 2 to guess
         System.out.println("Player 1: Enter a word for Player 2 to guess:");
         String secretWord = input.nextLine();
         String realWord = secretWord;
+        //create loop to clear the screen
         for (int space = 0; space < 25; space++) {
             System.out.println("\n");
         }
@@ -34,13 +37,13 @@ public class Hangman {
             String temp = secretWord.substring(i, i + 1);
             secretWord = secretWord.replace(temp, "-");
         }
-
+        //output 
         System.out.println(secretWord);
 
         //create a counter for the number of lives
-        int counter = 6;
-        
-        //create StringBuilder
+        int lives = 6;
+
+        //create StringBuilder to be able to modify Player 1's word
         StringBuilder temp = new StringBuilder(secretWord);
 
 
@@ -50,19 +53,27 @@ public class Hangman {
             System.out.println("Player 2: You have " + counter + " lives left. Guess a letter:");
             String guess = input.nextLine();
             char guessCharacter = guess.charAt(0);
-            //take input to match with Player 1's word
 
+            //take input to match with Player 1's word
+            //create a loop
             for (int i = 0; i < length; i++) {
+
                 if (guessCharacter == realWord.charAt(i)) {
                     System.out.println("Congrats you got one!");
-                    
-                    
-                     temp.setCharAt(i, guessCharacter);
+                    temp.setCharAt(i, guessCharacter);
+
+                    counter--;
                 }
-                
-                
+                counter++;
             }
+            //when player 2 guessed incorrectly,
+            if (counter > temp.length()) {
+                System.out.println("wrong");
+                lives--;
+            }
+            //output correct letter in position on Player 1's mystery word
             System.out.println(temp);
         }
+
     }
 }
