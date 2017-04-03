@@ -47,6 +47,8 @@ public class Hangman {
 
         //created a counter to count the position
         int counter = 1;
+        
+        boolean test = false;
 
         //create a counter for the number of lives
         int lives = 6;
@@ -68,31 +70,56 @@ public class Hangman {
             //checks first letter guess if multiple letters were entered
             char guessCharacter = guess.charAt(0);
 
+            //set variable whether guess is correct or not
+            boolean correct = true;
+
             //take input to match with Player 1's word
             //create a loop
-            for (int i = 0; i < length; i++) {
+            for (int i = 0; i < temp.length();) {
 
                 //if guess matches with any letter in Player 1's word
                 if (guessCharacter == realWord.charAt(i)) {
                     //sets letter in the position 'i' as the guessed letter
                     temp.setCharAt(i, guessCharacter);
-                    System.out.println("Congrats you got one!");
+                    
+                    test = true;
+                      //counter decrease for position 
+                counter--;
                 }
 
-                //counter decrease for position 
-                counter--;
+              
 
                 //counter increase for position 
                 counter++;
+
+           
+               i++; 
+                
+
+
             }
-            //if guess does not match with any letter in Player 1's word
-            if (counter > temp.length()) {
-                //decrease counter for number of lives
-                System.out.println("You lost a life Try again");
-                lives = lives - 1;
+            
+            for (int i = 0; i < temp.length(); i++) {
+                System.out.print(temp.charAt(i));
             }
-            //output correct letter in position on Player 1's mystery word
-            System.out.println(temp);
+            System.out.println("");
+            
+               if (counter > temp.length()) {
+                    //decrease counter for number of lives
+                   
+                    lives--;
+                }
+            
+            System.out.println(counter);
+                 //if guess does not match with any letter in Player 1's word
+             
+                
+                if(test){
+                    System.out.println("Congrats");
+                    test = false;
+                }
+        
         }
+
     }
 }
