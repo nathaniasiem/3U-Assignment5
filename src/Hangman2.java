@@ -40,7 +40,12 @@ public class Hangman2 {
             String temp = word.substring(i, i + 1);
             word = word.replace(temp, "-");
         }
-
+        
+        //print out word with replaced dashes
+        System.out.println("word");
+        
+        //create variables 
+        
 
     }
 }
