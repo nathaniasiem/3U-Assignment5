@@ -90,10 +90,13 @@ public class Hangman2 {
                     //increase counter
                     counter++;
                 }
+                //increase position to go on to next letter
+                i++;
             }
             //reveal guessed letter in the word
             word = build.toString();
             System.out.println(word);
+
             //when guessed letter is correct
             if (correct == false) {
                 System.out.println("Congrats! You got a correct letter!");
@@ -103,6 +106,13 @@ public class Hangman2 {
                 lives--;
             }
 
+        }//if player runs out of lives, game over.
+        if (lives == 0) {
+            System.out.println("Looks like you're out of lives, Game over.");
+            System.out.println("The word was '" + secretWord + "' ");
+        } else {
+            //otherwise they win
+            System.out.println("Congratulations, you've won!");
         }
     }
 }
