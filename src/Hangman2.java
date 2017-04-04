@@ -56,6 +56,8 @@ public class Hangman2 {
         boolean correct = true;
         //check to see if game is still running or not
         boolean finished = false;
+        //counter to keep track number of correct guesses
+        int realWord = 0;
 
         //create a StringBuilder to manipulate strings easier
         StringBuilder build = new StringBuilder(word);
@@ -81,17 +83,26 @@ public class Hangman2 {
                 if (guessCharacter == secretWord.charAt(i)) {
                     build.setCharAt(i, guessCharacter);
                     correct = false;
+                    //decrease counter
+                    counter--;
+                    //increase correct guesses
+                    realWord++;
+                    //increase counter
+                    counter++;
                 }
             }
             //reveal guessed letter in the word
             word = build.toString();
             System.out.println(word);
-        }
-        if (correct == true) {
-            System.out.println("Congrats! You got a correct letter!");
-        } else {
-            System.out.println("You are incorrect. Try again!");
-            lives--;
+            //when guessed letter is correct
+            if (correct == false) {
+                System.out.println("Congrats! You got a correct letter!");
+                //when guessed letter is incorrect
+            } else {
+                System.out.println("You are incorrect. Try again!");
+                lives--;
+            }
+
         }
     }
 }
