@@ -1,4 +1,5 @@
 
+
 import java.util.Scanner;
 
 /*
@@ -47,7 +48,7 @@ public class Hangman {
         //print out word with replaced dashes
         System.out.println(word);
 
-        //create variables 
+        //create variables
         //create counter to keep track of position
         int counter = 1;
         //create counter to keep track the number of lives
@@ -76,7 +77,7 @@ public class Hangman {
             //check first letter entered if there are multiple letters entered
             char guessCharacter = guess.charAt(0);
 
-            //resets the guess everytime to default 
+            //resets the guess everytime to default
             correct = true;
             //create a loop to check Player 2's guess matches up with Player 1's mystery word
             for (int i = 0; i < build.length();) {
@@ -94,7 +95,7 @@ public class Hangman {
                 }
                 //increase position to go on to next letter
                 i++;
-                
+
             }
             //reveal guessed letter in the word
             word = build.toString();
@@ -110,24 +111,19 @@ public class Hangman {
             }
             //reset counter back to 1
             counter = 1;
-            
+
+            //if player guessed the word, toggle game finished
+            if (realWord == secretWord.length()) {
+
+                System.out.println("Congratulations, you've won!");
+                //resets variable for correct guesses matches up with length of word
+                finished = true;
+            }
         }
-        //resets variable for correct guesses matches up with length of word
-        finished=false;
-        
-        //if player guessed the word, toggle game finished
-        if(realWord==secretWord.length()){
-          finished = true;  
-            System.out.println("Congratulations, you've won!");
-        }
-        
         //if player runs out of lives, game over.
         if (lives == 0) {
             System.out.println("Looks like you're out of lives, Game over.");
             System.out.println("The word was '" + secretWord + "' ");
-        } else {
-            //otherwise they win
-            System.out.println("Congratulations, you've won!");
         }
     }
 }
