@@ -15,111 +15,119 @@ public class Hangman {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // create a scanner to scan input
+        // create a scanner to scan user input
         Scanner input = new Scanner(System.in);
 
+        //ask Player 1 to enter word for Player 2 to guess
+        System.out.println("Enter a word for Player 2 to guess:");
 
-        //ask player 1 to type in word for player 2 to guess
-        System.out.println("Player 1: Enter a word for Player 2 to guess:");
+        //store Player 1 input that will be later converted into '-'
+        String word = input.nextLine();
 
-        //store input in strings
-        //stores the word that will be later converted into '-' 
-        String secretWord = input.nextLine();
-        //stores the entered word in letters
-        String realWord = secretWord;
+        //convert word to lowercase
+        word = word.toLowerCase();
 
-        //create loop to clear the screen
+        //store word in letters
+        String secretWord = word;
+
+        //create loop to clear screen
         for (int space = 0; space < 25; space++) {
             System.out.println("\n");
         }
 
+        //create set up for Player 2
         //calculate word length
-        int length = secretWord.length();
-
-        //replace Player 1's word with dashes
-        //create setup for Player 2
+        int length = word.length();
+        //replace letters with '-'
         for (int i = 0; i < length; i++) {
-            String temp = secretWord.substring(i, i + 1);
-            secretWord = secretWord.replace(temp, "-");
+            String temp = word.substring(i, i + 1);
+            word = word.replace(temp, "-");
         }
-        //word is hidden with dashes
-        System.out.println(secretWord);
 
-        //created a counter to count the position
+        //print out word with replaced dashes
+        System.out.println(word);
+
+        //create variables 
+        //create counter to keep track of position
         int counter = 1;
-        
-        boolean test = false;
-
-        //create a counter for the number of lives
+        //create counter to keep track the number of lives
         int lives = 6;
+        //check if user guessed correctly or not
+        boolean correct = true;
+        //check to see if game is still running or not
+        boolean finished = false;
+        //counter to keep track number of correct guesses
+        int realWord = 0;
 
-        //create StringBuilder to be able to modify Player 1's word easier
-        StringBuilder temp = new StringBuilder(secretWord);
+        //create a StringBuilder to manipulate strings easier
+        StringBuilder build = new StringBuilder(word);
 
+        //create a loop to keep game running
+        while (lives > 0 && !finished) {
+            //Initiate player 2 to guess
+            System.out.println("Player 2: You have " + lives + " lives left. Guess a letter.");
 
-        //Initiate Player 2 to start guessing
-        //create loop
-        while (lives > 0) {
-            System.out.println("Player 2: You have " + lives + " lives left. Guess a letter:");
-            //stores guessed letter as string
+            //take Player 2's guess and store as string
             String guess = input.nextLine();
 
-            //convert upper case into lowercase
+            //convert letter entered into lowercase
             guess = guess.toLowerCase();
 
-            //checks first letter guess if multiple letters were entered
+            //check first letter entered if there are multiple letters entered
             char guessCharacter = guess.charAt(0);
 
-            //set variable whether guess is correct or not
-            boolean correct = true;
+            //resets the guess everytime to default 
+            correct = true;
+            //create a loop to check Player 2's guess matches up with Player 1's mystery word
+            for (int i = 0; i < build.length();) {
 
-            //take input to match with Player 1's word
-            //create a loop
-            for (int i = 0; i < temp.length();) {
-
-                //if guess matches with any letter in Player 1's word
-                if (guessCharacter == realWord.charAt(i)) {
-                    //sets letter in the position 'i' as the guessed letter
-                    temp.setCharAt(i, guessCharacter);
-                    
-                    test = true;
-                      //counter decrease for position 
-                counter--;
+                //guess is correct, replace guessed letter in position of the word
+                if (guessCharacter == secretWord.charAt(i)) {
+                    build.setCharAt(i, guessCharacter);
+                    correct = false;
+                    //decrease counter
+                    counter--;
+                    //increase correct guesses
+                    realWord++;
+                    //increase counter
+                    counter++;
                 }
-
-              
-
-                //counter increase for position 
-                counter++;
-
-           
-               i++; 
+                //increase position to go on to next letter
+                i++;
                 
-
-
             }
-            
-            for (int i = 0; i < temp.length(); i++) {
-                System.out.print(temp.charAt(i));
+            //reveal guessed letter in the word
+            word = build.toString();
+            System.out.println(word);
+
+            //when guessed letter is correct
+            if (correct == false) {
+                System.out.println("Congrats! You got a correct letter!");
+                //when guessed letter is incorrect
+            } else {
+                System.out.println("You are incorrect. Try again!");
+                lives--;
             }
-            System.out.println("");
+            //reset counter back to 1
+            counter = 1;
             
-               if (counter > temp.length()) {
-                    //decrease counter for number of lives
-                   
-                    lives--;
-                }
-            
-            System.out.println(counter);
-                 //if guess does not match with any letter in Player 1's word
-             
-                
-                if(test){
-                    System.out.println("Congrats");
-                    test = false;
-                }
-        
         }
-
+        //resets variable for correct guesses matches up with length of word
+        finished=false;
+        
+        //if player guessed the word, toggle game finished
+        if(realWord==secretWord.length()){
+          finished = true;  
+            System.out.println("Congratulations, you've won!");
+        }
+        
+        //if player runs out of lives, game over.
+        if (lives == 0) {
+            System.out.println("Looks like you're out of lives, Game over.");
+            System.out.println("The word was '" + secretWord + "' ");
+        } else {
+            //otherwise they win
+            System.out.println("Congratulations, you've won!");
+        }
     }
 }
