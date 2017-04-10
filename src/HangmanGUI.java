@@ -29,21 +29,46 @@ public class HangmanGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        jButton37 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         userInput = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         userOutput = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         Hangman = new javax.swing.JTextArea();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         giveUp = new javax.swing.JButton();
         restart = new javax.swing.JButton();
+        letterA = new javax.swing.JButton();
+        letterC = new javax.swing.JButton();
+        letterD = new javax.swing.JButton();
+        letterB = new javax.swing.JButton();
+        letterE = new javax.swing.JButton();
+        letterG = new javax.swing.JButton();
+        letterF = new javax.swing.JButton();
+        letterH = new javax.swing.JButton();
+        letterI = new javax.swing.JButton();
+        letterJ = new javax.swing.JButton();
+        letterK = new javax.swing.JButton();
+        letterL = new javax.swing.JButton();
+        letterM = new javax.swing.JButton();
+        letterN = new javax.swing.JButton();
+        letterO = new javax.swing.JButton();
+        letterP = new javax.swing.JButton();
+        letterQ = new javax.swing.JButton();
+        letterR = new javax.swing.JButton();
+        letterS = new javax.swing.JButton();
+        letterT = new javax.swing.JButton();
+        letterU = new javax.swing.JButton();
+        letterV = new javax.swing.JButton();
+        letterW = new javax.swing.JButton();
+        letterX = new javax.swing.JButton();
+        letterY = new javax.swing.JButton();
+        letterZ = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
+
+        jButton37.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Hangman");
@@ -59,9 +84,11 @@ public class HangmanGUI extends javax.swing.JFrame {
 
         userOutput.setEditable(false);
         userOutput.setColumns(20);
+        userOutput.setFont(new java.awt.Font("Monospaced", 0, 18)); // NOI18N
         userOutput.setRows(5);
         jScrollPane1.setViewportView(userOutput);
 
+        Hangman.setEditable(false);
         Hangman.setColumns(20);
         Hangman.setRows(5);
         Hangman.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -71,53 +98,170 @@ public class HangmanGUI extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(Hangman);
 
-        jLabel3.setText("Player 2");
+        jLabel4.setText("Letters Guessed");
 
-        jTextField1.setText("Guess a Letter");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        giveUp.setText("Give Up");
+        giveUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                giveUpActionPerformed(evt);
             }
         });
 
-        jLabel4.setText("Letters Guessed");
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane3.setViewportView(jTextArea1);
-
-        giveUp.setText("Give Up");
-
         restart.setText("New Game");
+
+        letterA.setText("A");
+        letterA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                letterAActionPerformed(evt);
+            }
+        });
+
+        letterC.setText("C");
+
+        letterD.setText("D");
+
+        letterB.setText("B");
+        letterB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                letterBActionPerformed(evt);
+            }
+        });
+
+        letterE.setText("E");
+
+        letterG.setText("G");
+
+        letterF.setText("F");
+
+        letterH.setText("H");
+
+        letterI.setText("I");
+
+        letterJ.setText("J");
+
+        letterK.setText("K");
+
+        letterL.setText("L");
+
+        letterM.setText("M");
+
+        letterN.setText("N");
+
+        letterO.setText("O");
+        letterO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                letterOActionPerformed(evt);
+            }
+        });
+
+        letterP.setText("P");
+
+        letterQ.setText("Q");
+
+        letterR.setText("R");
+
+        letterS.setText("S");
+
+        letterT.setText("T");
+
+        letterU.setText("U");
+
+        letterV.setText("V");
+
+        letterW.setText("W");
+
+        letterX.setText("X");
+
+        letterY.setText("Y");
+
+        letterZ.setText("Z");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(16, 16, 16)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(userInput, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel4)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jLabel2)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(userInput, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(letterS)
+                                            .addComponent(letterM)
+                                            .addComponent(letterY))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(letterN)
+                                                    .addComponent(letterT))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(letterO)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(letterP)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(letterQ)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(letterR))
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(letterU)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(letterV)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(letterW)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                        .addComponent(letterX))))
+                                            .addComponent(letterZ))))
+                                .addGap(0, 39, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(letterA)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(letterB)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(letterC)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(letterD))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(letterG)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(letterH)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(letterI)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(letterJ, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jLabel4))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(letterK)
+                                    .addComponent(letterE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(letterL)
+                                    .addComponent(letterF))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(53, 53, 53)
                         .addComponent(giveUp)
                         .addGap(18, 18, 18)
                         .addComponent(restart))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 4, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -130,23 +274,51 @@ public class HangmanGUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2)
-                        .addGap(23, 23, 23))
-                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(userInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(30, 30, 30)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel4)
+                        .addGap(29, 29, 29)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(letterA)
+                            .addComponent(letterB)
+                            .addComponent(letterC)
+                            .addComponent(letterD)
+                            .addComponent(letterE)
+                            .addComponent(letterF))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(letterG)
+                            .addComponent(letterH)
+                            .addComponent(letterI)
+                            .addComponent(letterJ)
+                            .addComponent(letterK)
+                            .addComponent(letterL))
+                        .addGap(3, 3, 3)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(letterM)
+                            .addComponent(letterN)
+                            .addComponent(letterO)
+                            .addComponent(letterQ)
+                            .addComponent(letterP)
+                            .addComponent(letterR))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(letterS)
+                            .addComponent(letterT)
+                            .addComponent(letterU)
+                            .addComponent(letterV)
+                            .addComponent(letterW)
+                            .addComponent(letterX)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 334, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(letterY)
+                    .addComponent(letterZ))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         pack();
@@ -158,17 +330,48 @@ public class HangmanGUI extends javax.swing.JFrame {
         
         //grab text from textbox named "userInput"
         String word = userInput.getText();
-        //output text as a mystery word
         
-    }//GEN-LAST:event_userInputActionPerformed
+        //convert word to lowercase
+        word = word.toLowerCase();
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+        //store word in letters
+        String secretWord = word;
+        
+        //output text as a mystery word
+        //calculate word length
+        int length = word.length();
+        //replace letters with '-'
+        for (int i = 0; i < length; i++) {
+            String temp = word.substring(i, i + 1);
+            word = word.replace(temp, "-");
+        }
+        userOutput.setText(word);
+        
+        //clear word in player 1 user input
+         for (int space = 0; space < 25; space++) {
+            userInput.setText("\n");
+        }
+    }//GEN-LAST:event_userInputActionPerformed
 
     private void HangmanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HangmanMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_HangmanMouseEntered
+
+    private void letterOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letterOActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_letterOActionPerformed
+
+    private void letterAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letterAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_letterAActionPerformed
+
+    private void letterBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_letterBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_letterBActionPerformed
+
+    private void giveUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_giveUpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_giveUpActionPerformed
 
     /**
      * @param args the command line arguments
@@ -207,15 +410,38 @@ public class HangmanGUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea Hangman;
     private javax.swing.JButton giveUp;
+    private javax.swing.JButton jButton37;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton letterA;
+    private javax.swing.JButton letterB;
+    private javax.swing.JButton letterC;
+    private javax.swing.JButton letterD;
+    private javax.swing.JButton letterE;
+    private javax.swing.JButton letterF;
+    private javax.swing.JButton letterG;
+    private javax.swing.JButton letterH;
+    private javax.swing.JButton letterI;
+    private javax.swing.JButton letterJ;
+    private javax.swing.JButton letterK;
+    private javax.swing.JButton letterL;
+    private javax.swing.JButton letterM;
+    private javax.swing.JButton letterN;
+    private javax.swing.JButton letterO;
+    private javax.swing.JButton letterP;
+    private javax.swing.JButton letterQ;
+    private javax.swing.JButton letterR;
+    private javax.swing.JButton letterS;
+    private javax.swing.JButton letterT;
+    private javax.swing.JButton letterU;
+    private javax.swing.JButton letterV;
+    private javax.swing.JButton letterW;
+    private javax.swing.JButton letterX;
+    private javax.swing.JButton letterY;
+    private javax.swing.JButton letterZ;
     private javax.swing.JButton restart;
     private javax.swing.JTextField userInput;
     private javax.swing.JTextArea userOutput;
