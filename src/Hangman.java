@@ -103,7 +103,7 @@ public class Hangman {
 
             //when guessed letter is correct
             if (correct == false) {
-                System.out.println("Congrats! You got a correct letter!");
+                System.out.println("You got a correct letter!");
                 //when guessed letter is incorrect
             } else {
                 System.out.println("You are incorrect. Try again!");
